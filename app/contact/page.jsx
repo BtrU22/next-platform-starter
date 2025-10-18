@@ -3,7 +3,7 @@ export default function ContactPage() {
     <main className="mx-auto max-w-2xl p-6">
       <h1 className="text-3xl font-bold mb-4">Request a Free Estimate</h1>
       <p className="mb-6">
-        Tell us about your lawn or landscaping needs. We’ll get back to you quickly.
+        Tell us about your lawn or landscaping needs. We’ll get back to you quickly. 
       </p>
 
       {/* Netlify Forms: detected at build time */}
