@@ -1,19 +1,21 @@
+export const dynamic = 'force-static'; // ensure static HTML at build time
+
 export default function ContactPage() {
   return (
     <main className="mx-auto max-w-2xl p-6">
       <h1 className="text-3xl font-bold mb-4">Request a Free Estimate</h1>
       <p className="mb-6">
-        Tell us about your lawn or landscaping needs. We’ll get back to you quickly. 
+        Tell us about your lawn or landscaping needs. We’ll get back to you quickly.
       </p>
 
-      {/* Netlify Forms: detected at build time */}
       <form
         name="interest"
         method="POST"
+        action="/thanks"
         data-netlify="true"
+        netlify-honeypot="bot-field"
         className="grid gap-4"
       >
-        {/* Required hidden input so Netlify recognizes the form */}
         <input type="hidden" name="form-name" value="interest" />
 
         <label className="grid gap-1">
@@ -41,7 +43,7 @@ export default function ContactPage() {
           <textarea name="message" rows={5} required className="border p-2 rounded" />
         </label>
 
-        {/* Basic honeypot (spam trap) */}
+        {/* Honeypot input (matches netlify-honeypot attr) */}
         <p className="hidden" aria-hidden="true">
           <label>Don’t fill this out: <input name="bot-field" /></label>
         </p>
